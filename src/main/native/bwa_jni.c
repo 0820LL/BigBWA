@@ -61,24 +61,24 @@ JNIEXPORT jint JNICALL Java_com_github_bigbwa_BwaJni_bwa_1jni(JNIEnv *env, jobje
         	fprintf(stderr, "[%s] Algorithm found %d '%s'\n",__func__,i, algorithm);
         }
         
-		//If it is the mem algorithm and the -f option has been set in the previous argument, we get the output file name.
-		if(getFilename == 1){
-			//strcpy(output,argvTmp[i]);
-			output = argvTmp[i];
-			getFilename = 0;
-			fprintf(stderr, "[%s] Filename found %d '%s'\n",__func__,i, output);
-		}
+	//If it is the mem algorithm and the -f option has been set in the previous argument, we get the output file name.
+	if(getFilename == 1){
+		//strcpy(output,argvTmp[i]);
+		output = argvTmp[i];
+		getFilename = 0;
+		fprintf(stderr, "[%s] Filename found %d '%s'\n",__func__,i, output);
+	}
 		
-		//We set the option to get the file name in the next iteration
-		//if((strcmp(argvTmp[i],"-f")==0) && (i<(stringCount-1)) && (strcmp(algorithm,"mem")==0)){
-		if((strcmp(argvTmp[i],"-f")==0) && (i<(stringCount-1))){
-			getFilename = 1;
-			redirect = 1;
-			if(strcmp(algorithm,"mem")==0){
-				mem = 1;
-			}
-			fprintf(stderr, "[%s] Filename parameter -f found %d '%s'\n",__func__,i, argvTmp[i]);
+	//We set the option to get the file name in the next iteration
+	//if((strcmp(argvTmp[i],"-f")==0) && (i<(stringCount-1)) && (strcmp(algorithm,"mem")==0)){
+	if((strcmp(argvTmp[i],"-f")==0) && (i<(stringCount-1))){
+		getFilename = 1;
+		redirect = 1;
+		if(strcmp(algorithm,"mem")==0){
+			mem = 1;
 		}
+		fprintf(stderr, "[%s] Filename parameter -f found %d '%s'\n",__func__,i, argvTmp[i]);
+	}
         
         fprintf(stderr, "[%s] Arg %d '%s'\n",__func__,i, argvTmp[i]);
         
