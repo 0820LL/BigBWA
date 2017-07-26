@@ -36,19 +36,19 @@ public class BwaOptions {
 	private boolean memAlgorithm 	= true;
 	private boolean alnAlgorithm 	= false;
 	private boolean bwaswAlgorithm 	= false;
-	private String bwaArgs 			= "";
+	private String bwaArgs 		= "";
 
 	private boolean pairedReads = true;
 	private boolean singleReads = false;
 
-	private String indexPath 			= "";
+	private String indexPath 		= "";
 	private String outputHdfsDir 		= "";
-	private String inputPath 			= "";
-	private String inputPath2 			= "";
+	private String inputPath 		= "";
+	private String inputPath2 		= "";
 	private boolean sortFastqReads 		= false;
 	private boolean sortFastqReadsHdfs 	= false;
 
-	private boolean useReducer			= false;
+	private boolean useReducer		= false;
 
 	private String correctUse =
 			"yarn jar --class com.github.bigbwa.BigBWA BigBWA-2.0.jar";// [SparkBWA Options] Input.fastq [Input2.fastq] Output\n";
